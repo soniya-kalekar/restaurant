@@ -9,25 +9,26 @@
 
 body{
 margin:0;
-padding:20px;
+padding:15px;
 background:#ececec;
 font-family:Arial;
 }
 
 .frame{
-max-width:900px;
-margin:auto;
 background:white;
-border:12px solid #3b2a1a;
+border:10px solid #3b2a1a;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 overflow:hidden;
 }
 
+/* TOP SECTION */
+
 .top{
-min-height:60vh;
+text-align:center;
+height:420px;
 width:100%;
-background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(r3.jfif);
+background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(r3.jfif);
 background-size:cover;
 background-position:center;
 display:flex;
@@ -35,59 +36,72 @@ justify-content:center;
 align-items:center;
 }
 
+/* HERO IMAGES */
+
 .hero{
 display:flex;
 justify-content:center;
 align-items:center;
 gap:10px;
-flex-wrap:wrap;
 }
 
 .hero img{
-width:30vw;
-max-width:200px;
-height:auto;
+width:280px;
+height:280px;
 object-fit:cover;
 border-radius:12px;
-border:6px solid white;
+border:8px solid white;
 box-shadow:0 10px 25px rgba(0,0,0,0.35);
 }
 
+/* LEFT IMAGE */
+
 .left{
 transform:rotate(-6deg);
-margin-right:-40px;
+margin-right:-50px;
 z-index:1;
 }
 
+/* CENTER */
+
 .center{
+width:90px !important;
+height:90px !important;
 z-index:2;
 }
 
+/* RIGHT IMAGE */
+
 .right{
 transform:rotate(6deg);
-margin-left:-40px;
+margin-left:-50px;
 z-index:1;
 }
 
+/* TITLE */
+
 h1{
-margin-top:30px;
-font-size:32px;
-text-align:center;
+margin:25px 0;
+font-size:30px;
 }
+
+/* BOTTOM SECTION */
 
 .bottom{
 text-align:center;
 background:#f5f5f5;
-padding:30px 10px;
+padding:20px;
 }
 
+/* BUTTONS */
+
 .buttons{
-margin-top:20px;
+margin-bottom:15px;
 }
 
 button{
-padding:12px 20px;
-margin:8px;
+padding:12px 22px;
+margin:6px;
 font-size:16px;
 border:none;
 border-radius:8px;
@@ -100,7 +114,47 @@ button:hover{
 background:#e60000;
 }
 
+/* -------------------- */
+/* PHONE OPTIMIZATION */
+/* -------------------- */
+
+@media (max-width:700px){
+
+.top{
+height:320px;
+}
+
+.hero img{
+width:160px;
+height:160px;
+}
+
+.center{
+width:70px !important;
+height:70px !important;
+}
+
+.left{
+margin-right:-25px;
+}
+
+.right{
+margin-left:-25px;
+}
+
+h1{
+font-size:24px;
+}
+
+button{
+font-size:14px;
+padding:10px 18px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
@@ -110,29 +164,25 @@ background:#e60000;
 <div class="top">
 
 <div class="hero">
-
 <img src="r1.png" class="left">
 <img src="resturent.png" class="center">
 <img src="r2.png" class="right">
-
-</div>
-  
 </div>
 
-<h1>POIE BOMB</h1>
+</div>
+
+<center><h1>POIE BOMB</h1></center>
 
 <div class="bottom">
 
 <div class="buttons">
-
 <button onclick="openMap()">📍 Location</button>
 <button onclick="openMenu()">📖 Menu</button>
 <button onclick="openReview()">⭐ Reviews</button>
-
 </div>
 
 <h4>
-🍟Crafting The Future of the Poies 🥙<br>
+🍟 Crafting The Future of the Poies 🥙<br>
 5PM to 9PM 🕘<br>
 Monday & Thursday Close 🫥
 </h4>
