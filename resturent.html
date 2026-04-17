@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Restaurant Menu</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+padding:20px;
+background:#ececec;
+font-family:Arial;
+}
+
+.frame{
+max-width:900px;
+margin:auto;
+background:white;
+border:12px solid #3b2a1a;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+overflow:hidden;
+}
+
+.top{
+min-height:60vh;
+width:100%;
+background-image:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(r3.jfif);
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.hero img{
+width:30vw;
+max-width:200px;
+height:auto;
+object-fit:cover;
+border-radius:12px;
+border:6px solid white;
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.left{
+transform:rotate(-6deg);
+margin-right:-40px;
+z-index:1;
+}
+
+.center{
+z-index:2;
+}
+
+.right{
+transform:rotate(6deg);
+margin-left:-40px;
+z-index:1;
+}
+
+h1{
+margin-top:30px;
+font-size:32px;
+text-align:center;
+}
+
+.bottom{
+text-align:center;
+background:#f5f5f5;
+padding:30px 10px;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+button{
+padding:12px 20px;
+margin:8px;
+font-size:16px;
+border:none;
+border-radius:8px;
+background:#ff4d4d;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#e60000;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="frame">
+
+<div class="top">
+
+<div class="hero">
+
+<img src="r1.png" class="left">
+<img src="resturent.png" class="center">
+<img src="r2.png" class="right">
+
+</div>
+
+</div>
+
+<h1>POIE BOMB</h1>
+
+<div class="bottom">
+
+<div class="buttons">
+
+<button onclick="openMap()">📍 Location</button>
+<button onclick="openMenu()">📖 Menu</button>
+<button onclick="openReview()">⭐ Reviews</button>
+
+</div>
+
+<h4>
+🍟Crafting The Future of the Poies 🥙<br>
+5PM to 9PM 🕘<br>
+Monday & Thursday Close 🫥
+</h4>
+
+</div>
+
+</div>
+
+<script>
+
+function openMap(){
+window.open("https://maps.google.com/?q=aurangabad restaurant");
+}
+
+function openMenu(){
+window.location.href="menu.html";
+}
+
+function openReview(){
+window.open("https://www.google.com/search?q=poie+bomb+aurangabad");
+}
+
+</script>
+
+</body>
+</html>
