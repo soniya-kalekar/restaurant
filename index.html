@@ -146,6 +146,17 @@ padding:10px 18px;
 
 }
 
+.whatapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  cursor:pointer;
+  
+}
+
 </style>
 
 </head>
@@ -172,6 +183,8 @@ padding:10px 18px;
 <button onclick="openMap()">📍 Location</button>
 <button onclick="openMenu()">📖 Menu</button>
 <button onclick="openReview()">⭐ Reviews</button>
+<button onclick="contact()">contact</button>
+
 </div>
 
 <h4>
@@ -179,6 +192,11 @@ padding:10px 18px;
 5PM to 9PM 🕘<br>
 Monday & Thursday Close 🫥
 </h4>
+
+<a href="https://wa.me/919999999999">
+<img src="whatapp.jfif" class="whatsapp">
+</a>
+
 
 </div>
 
@@ -196,6 +214,15 @@ window.location.href="menu.html";
 
 function openReview(){
 window.open("https://www.google.com/search?q=poie+bomb+aurangabad");
+}
+function contact(){
+  <h3>Contact</h3>
+
+<p>
+📞 Phone: +91 9876543210 <br>
+📧 Email: poiebomb@gmail.com <br>
+📍 Aurangabad, Maharashtra
+</p>
 }
 
 </script>
