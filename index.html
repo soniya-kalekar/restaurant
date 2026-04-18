@@ -1,233 +1,319 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+<title>Restaurant Menu</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant Demo</title>
 
 <style>
+
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:15px;
+background:#ececec;
+font-family:Arial;
 }
 
-header{
-    background:#111;
-    color:white;
-    padding:15px;
-    text-align:center;
+.frame{
+background:white;
+border:10px solid #3b2a1a;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+overflow:hidden;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    background:#333;
-    padding:10px;
+/* TOP SECTION */
+
+.top{
+text-align:center;
+height:420px;
+width:100%;
+background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(r3.jfif);
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.section{
-    display:none;
-    padding:40px;
-}
-
-.active{
-    display:block;
-}
+/* HERO IMAGES */
 
 .hero{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:40px;
-    padding:40px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px; /* breathing space added */
 }
 
 .hero img{
-    width:400px;
-    border-radius:10px;
+width:260px;
+height:260px;
+object-fit:cover;
+border-radius:12px;
+border:8px solid white;
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
 }
 
-.hero-text{
-    max-width:400px;
+/* LEFT IMAGE */
+
+.left{
+transform:rotate(-6deg);
+margin-right:-40px;
+z-index:1;
+}
+
+/* CENTER */
+
+.center{
+z-index:2;
+}
+
+/* RIGHT IMAGE */
+
+.right{
+transform:rotate(6deg);
+margin-left:-40px;
+z-index:1;
+}
+
+/* TITLE */
+
+h1{
+margin:25px 0;
+font-size:30px;
+}
+
+/* BOTTOM SECTION */
+
+.bottom{
+text-align:center;
+background:#f5f5f5;
+padding:20px;
+}
+
+/* BUTTONS */
+
+.buttons{
+margin-bottom:15px;
+}
+
+button{
+padding:12px 22px;
+margin:6px;
+font-size:16px;
+border:none;
+border-radius:8px;
+background:#ff4d4d;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#e60000;
+}
+
+/* FOOD SECTION */
+
+.food{
+padding:40px 20px;
+text-align:center;
+}
+
+.food h2{
+margin-bottom:30px;
 }
 
 .food-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
 
 .food-item{
-    border:1px solid #ddd;
-    padding:15px;
-    border-radius:10px;
-    text-align:center;
+width:220px;
 }
 
 .food-item img{
-    width:100%;
-    border-radius:8px;
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:10px;
+box-shadow:0 6px 15px rgba(0,0,0,0.25);
 }
 
-.review{
-    border-bottom:1px solid #ccc;
-    padding:10px 0;
+/* CONTACT SECTION */
+
+.contact{
+padding:30px;
+text-align:center;
+background:#fff7f0;
 }
 
-.contact-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:10px 20px;
-    background:#ff4d4d;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
+/* MAP */
+
+.map{
+width:100%;
+height:250px;
+border:none;
+margin-top:15px;
 }
 
-@media(max-width:768px){
+/* PHONE OPTIMIZATION */
 
-.hero{
-    flex-direction:column;
+@media (max-width:700px){
+
+.top{
+height:320px;
 }
 
 .hero img{
-    width:100%;
+width:160px;
+height:160px;
+}
+
+.left{
+margin-right:-25px;
+}
+
+.right{
+margin-left:-25px;
+}
+
+h1{
+font-size:24px;
+}
+
+button{
+font-size:14px;
+padding:10px 18px;
+}
+
+.food-grid{
+gap:15px;
 }
 
 }
+
+/* WHATSAPP BUTTON */
+
+.whatapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+cursor:pointer;
+}
+
 </style>
-</head>
 
+</head>
 
 <body>
 
-<header>
-<h1>Restaurant Name</h1>
-</header>
+<div class="frame">
 
-<nav>
-<a onclick="showSection('home')">Home</a>
-<a onclick="showSection('food')">Food</a>
-<a onclick="showSection('reviews')">Reviews</a>
-<a onclick="showSection('contact')">Contact</a>
-</nav>
-
-
-<!-- HOME -->
-<section id="home" class="section active">
+<div class="top">
 
 <div class="hero">
-
-<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
-
-<div class="hero-text">
-<h2>Welcome to Our Restaurant</h2>
-<p>Fresh food, great taste, and a cozy place to enjoy meals with friends and family.</p>
-
-<a href="#food" onclick="showSection('food')" class="contact-btn">
-View Food Menu
-</a>
-
+<img src="p1.png" class="left">
+<img src="resturent.png" class="center">
+<img src="r2.png" class="right">
 </div>
 
 </div>
 
-</section>
+<center><h1>POIE BOMB</h1></center>
 
+<div class="bottom">
 
+<div class="buttons">
+<button onclick="openMap()">📍 Location</button>
+<button onclick="openMenu()">📖 Menu</button>
+<button onclick="openReview()">⭐ Reviews</button>
+<button onclick="contact()">Contact</button>
+</div>
 
-<!-- FOOD -->
-<section id="food" class="section">
+<h4>
+🍟 Crafting The Future of the Poies 🥙<br>
+5PM to 9PM 🕘<br>
+Monday & Thursday Close 🫥
+</h4>
 
-<h2>Our Food</h2>
+</div>
+
+<!-- FOOD SECTION -->
+
+<div class="food">
+
+<h2>Our Specials</h2>
 
 <div class="food-grid">
 
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
-<h3>Pizza</h3>
-<p>₹250</p>
+<img src="food1.jpg">
+<p>Chicken Poie</p>
 </div>
 
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
-<h3>Burger</h3>
-<p>₹180</p>
+<img src="food2.jpg">
+<p>Loaded Fries</p>
 </div>
 
 <div class="food-item">
-<img src="https://images.unsplash.com/photo-1604908176997-431a9b4b2f0a">
-<h3>Pasta</h3>
-<p>₹220</p>
+<img src="food3.jpg">
+<p>Special Sandwich</p>
 </div>
 
 </div>
 
-</section>
-
-
-
-<!-- REVIEWS -->
-<section id="reviews" class="section">
-
-<h2>Customer Reviews</h2>
-
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-Amazing food and great service!
 </div>
 
-<div class="review">
-⭐️⭐️⭐️⭐️  
-Loved the pizza. Definitely coming again.
+<!-- CONTACT SECTION -->
+
+<div class="contact" id="contact">
+
+<h2>Contact</h2>
+
+<p>
+📍 Address: Tarabai school bhamai, Near sakhalim road, Usgaon, Bicholim, Goa 403105
+</p>
+
+<p>
+📞 Phone: 090211 15439
+</p>
+
+<iframe
+class="map"
+src="https://www.google.com/maps?q=Tarabai%20School%20Bhamai%20Goa&output=embed">
+</iframe>
+
 </div>
 
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-Best restaurant in the area!
-</div>
-
-</section>
-
-
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-
-<h2>Contact Us</h2>
-
-<p>📍 Location: Your Address</p>
-<p>📞 Phone: 9876543210</p>
-
-<a href="https://wa.me/919876543210" class="contact-btn">
-Message on WhatsApp
+<a href="https://wa.me/919021115439">
+<img src="whatapp.jfif" class="whatapp">
 </a>
 
-</section>
-
-
+</div>
 
 <script>
 
-function showSection(sectionId){
+function openMap(){
+window.open("https://maps.app.goo.gl/5Zd3AS5U1fqczJkY7");
+}
 
-let sections = document.querySelectorAll('.section');
+function openMenu(){
+window.location.href="menu.html";
+}
 
-sections.forEach(section=>{
-section.classList.remove('active');
-});
+function openReview(){
+window.open("https://www.google.com/search?q=Poie+Bomb+Reviews");
+}
 
-document.getElementById(sectionId).classList.add('active');
-
+function contact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
 
 </script>
