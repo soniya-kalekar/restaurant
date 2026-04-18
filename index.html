@@ -134,6 +134,7 @@ box-shadow:0 6px 15px rgba(0,0,0,0.25);
 padding:30px;
 text-align:center;
 background:#fff7f0;
+display:none;
 }
 
 /* REVIEW SECTION */
@@ -142,6 +143,7 @@ background:#fff7f0;
 padding:30px;
 text-align:center;
 background:#f9f9f9;
+display:none;
 }
 
 .review p{
@@ -319,11 +321,21 @@ window.location.href="menu.html";
 }
 
 function openReview(){
+
+document.getElementById("review").style.display="block";
+document.getElementById("contact").style.display="none";
+
 document.getElementById("review").scrollIntoView({behavior:"smooth"});
+
 }
 
 function contact(){
+
+document.getElementById("contact").style.display="block";
+document.getElementById("review").style.display="none";
+
 document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+
 }
 
 </script>
