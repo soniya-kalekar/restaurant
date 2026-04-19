@@ -22,20 +22,49 @@ background:white;
 padding:30px;
 border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.25);
-text-align:center;
 }
 
 h1{
-margin-bottom:25px;
+text-align:center;
+margin-bottom:30px;
 }
 
 .review{
-margin-bottom:20px;
-font-size:18px;
+display:flex;
+align-items:flex-start;
+margin-bottom:25px;
+border-bottom:1px solid #ddd;
+padding-bottom:20px;
+}
+
+.profile{
+width:50px;
+height:50px;
+border-radius:50%;
+margin-right:15px;
+}
+
+.review-content{
+flex:1;
+}
+
+.name{
+font-weight:bold;
+}
+
+.stars{
+color:#f5a623;
+margin:3px 0;
+}
+
+.text{
+font-size:16px;
+color:#333;
 }
 
 button{
-margin-top:20px;
+display:block;
+margin:30px auto 0;
 padding:12px 20px;
 border:none;
 border-radius:8px;
@@ -60,15 +89,44 @@ background:#e60000;
 <h1>Customer Reviews</h1>
 
 <div class="review">
-⭐️⭐️⭐️⭐️⭐️ Amazing poies! The taste is incredible.
+
+<img class="profile" src="https://i.pravatar.cc/50?img=1">
+
+<div class="review-content">
+
+<div class="name">Rahul Sharma</div>
+<div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+<div class="text">Amazing poies! The taste is incredible.</div>
+
+</div>
 </div>
 
-<div class="review">
-⭐️⭐️⭐️⭐️ Great snacks and friendly service.
-</div>
 
 <div class="review">
-⭐️⭐️⭐️⭐️⭐️ One of the best food spots in the area!
+
+<img class="profile" src="https://i.pravatar.cc/50?img=5">
+
+<div class="review-content">
+
+<div class="name">Priya Patel</div>
+<div class="stars">⭐️⭐️⭐️⭐️</div>
+<div class="text">Great snacks and friendly service.</div>
+
+</div>
+</div>
+
+
+<div class="review">
+
+<img class="profile" src="https://i.pravatar.cc/50?img=8">
+
+<div class="review-content">
+
+<div class="name">Amit Verma</div>
+<div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+<div class="text">One of the best food spots in the area!</div>
+
+</div>
 </div>
 
 <button onclick="goBack()">⬅ Back to Restaurant</button>
